@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.ingenious_counter.MainActivity">
+
+    <TableRow>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="i1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="i2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="i3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="i4" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="i5" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="i6" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:padding="8dp"
+            android:text="player1" />
+
+        <TextView
+            android:gravity="right"
+            android:padding="@dimen/cells_padding"
+            android:text="p" />
+
+        <TextView
+            android:gravity="right"
+            android:padding="8dp"
+            android:text="p" />
+
+        <TextView
+            android:gravity="right"
+            android:padding="8dp"
+            android:text="p" />
+
+        <TextView
+            android:gravity="right"
+            android:padding="8dp"
+            android:text="p" />
+
+        <TextView
+            android:gravity="right"
+            android:padding="8dp"
+            android:text="p" />
+
+        <TextView
+            android:gravity="right"
+            android:padding="8dp"
+            android:text="p" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:padding="8dp"
+            android:text="player2" />
+
+        <TextView
+            android:gravity="right"
+            android:padding="@dimen/cells_padding"
+            android:text="p" />
+
+        <TextView
+            android:gravity="right"
+            android:padding="8dp"
+            android:text="p" />
+
+        <TextView
+            android:gravity="right"
+            android:padding="8dp"
+            android:text="p" />
+
+        <TextView
+            android:gravity="right"
+            android:padding="8dp"
+            android:text="p" />
+
+        <TextView
+            android:gravity="right"
+            android:padding="8dp"
+            android:text="p" />
+
+        <TextView
+            android:gravity="right"
+            android:padding="8dp"
+            android:text="p" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:padding="8dp"
+            android:text="player3" />
+
+        <TextView
+            android:gravity="right"
+            android:padding="@dimen/cells_padding"
+            android:text="p" />
+
+        <TextView
+            android:gravity="right"
+            android:padding="8dp"
+            android:text="p" />
+
+        <TextView
+            android:gravity="right"
+            android:padding="8dp"
+            android:text="p" />
+
+        <TextView
+            android:gravity="right"
+            android:padding="8dp"
+            android:text="p" />
+
+        <TextView
+            android:gravity="right"
+            android:padding="8dp"
+            android:text="p" />
+
+        <TextView
+            android:gravity="right"
+            android:padding="8dp"
+            android:text="p" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:padding="8dp"
+            android:text="player4" />
+
+        <TextView
+            android:gravity="right"
+            android:padding="@dimen/cells_padding"
+            android:text="p" />
+
+        <TextView
+            android:gravity="right"
+            android:padding="8dp"
+            android:text="p" />
+
+        <TextView
+            android:gravity="right"
+            android:padding="8dp"
+            android:text="p" />
+
+        <TextView
+            android:gravity="right"
+            android:padding="8dp"
+            android:text="p" />
+
+        <TextView
+            android:gravity="right"
+            android:padding="8dp"
+            android:text="p" />
+
+        <TextView
+            android:gravity="right"
+            android:padding="8dp"
+            android:text="p" />
+    </TableRow>
+
+
+</TableLayout>
