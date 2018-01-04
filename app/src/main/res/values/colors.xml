@@ -3,4 +3,10 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorRedStar">#fd414c</color>
+    <color name="colorGreenCircle">#149f66</color>
+    <color name="colorBlueStar">#148dc0</color>
+    <color name="colorOrangeHexagon">#ff8b29</color>
+    <color name="colorYellowStar">#fff837</color>
+    <color name="colorPurpleRing">#9e3867</color>
 </resources>

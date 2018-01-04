@@ -1,210 +1,388 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.android.ingenious_counter.MainActivity">
 
-    <TableRow>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:text="" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/colorRedStar"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:onClick="addPoint1"
+                    android:text="i1" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/colorGreenCircle"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:text="i2" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/colorBlueStar"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:text="i3" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/colorOrangeHexagon"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:text="i4" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/colorYellowStar"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:text="i5" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/colorPurpleRing"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:onClick="reset"
+                    android:text="i6" />
+            </TableRow>
+
+            <TableRow android:padding="16dp"
+                android:id="@+id/player1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:text="player1" />
+
+                <TextView
+                    android:id="@+id/player1_i1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:text="p1" />
+
+                <TextView
+                    android:id="@+id/player1_i2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:text="p2" />
+
+                <TextView
+                    android:id="@+id/player1_i3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:text="p3" />
+
+                <TextView
+                    android:id="@+id/player1_i4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:text="p4" />
+
+                <TextView
+                    android:id="@+id/player1_i5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:text="p5" />
+
+                <TextView
+                    android:id="@+id/player1_i6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:text="p6" />
+            </TableRow>
+
+            <TableRow android:padding="16dp"
+                android:id="@+id/player2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:text="player2" />
+
+                <TextView
+                    android:id="@+id/player2_i1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:text="p1" />
+
+                <TextView
+                    android:id="@+id/player2_i2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:text="p2" />
+
+                <TextView
+                    android:id="@+id/player2_i3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:text="p3" />
+
+                <TextView
+                    android:id="@+id/player2_i4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:text="p4" />
+
+                <TextView
+                    android:id="@+id/player2_i5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:text="p5" />
+
+                <TextView
+                    android:id="@+id/player2_i6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:text="p6" />
+            </TableRow>
+
+            <TableRow android:padding="16dp"
+                android:id="@+id/player3">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:text="player3" />
+
+                <TextView
+                    android:id="@+id/player3_i1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:text="p1" />
+
+                <TextView
+                    android:id="@+id/player3_i2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:text="p2" />
+
+                <TextView
+                    android:id="@+id/player3_i3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:text="p3" />
+
+                <TextView
+                    android:id="@+id/player3_i4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:text="p4" />
+
+                <TextView
+                    android:id="@+id/player3_i5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:text="p5" />
+
+                <TextView
+                    android:id="@+id/player3_i6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:text="p6" />
+            </TableRow>
+
+            <TableRow android:padding="16dp"
+                android:id="@+id/player4">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:text="player4" />
+
+                <TextView
+                    android:id="@+id/player4_i1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:text="p1" />
+
+                <TextView
+                    android:id="@+id/player4_i2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:text="p2" />
+
+                <TextView
+                    android:id="@+id/player4_i3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:text="p3" />
+
+                <TextView
+                    android:id="@+id/player4_i4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:text="p4" />
+
+                <TextView
+                    android:id="@+id/player4_i5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:text="p5" />
+
+                <TextView
+                    android:id="@+id/player4_i6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/cell_padding"
+                    android:text="p6" />
+            </TableRow>
+
+
+        </TableLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:layout_gravity="center"
             android:padding="8dp"
-            android:text="" />
+            android:text="Currently winning" />
 
         <TextView
+            android:id="@+id/winner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="8dp"
-            android:text="i1" />
+            android:layout_gravity="center"
+            android:text="Winner"
+            android:textColor="@color/colorPrimaryDark" />
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="8dp"
-            android:text="i2" />
+            android:layout_gravity="center">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="8dp"
-            android:text="i3" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:onClick="reset"
+                android:text="Reset" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="8dp"
-            android:text="i4" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="8dp"
-            android:text="i5" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="8dp"
-            android:text="i6" />
-    </TableRow>
-
-    <TableRow>
-
-        <TextView
-            android:padding="8dp"
-            android:text="player1" />
-
-        <TextView
-            android:gravity="right"
-            android:padding="@dimen/cells_padding"
-            android:text="p" />
-
-        <TextView
-            android:gravity="right"
-            android:padding="8dp"
-            android:text="p" />
-
-        <TextView
-            android:gravity="right"
-            android:padding="8dp"
-            android:text="p" />
-
-        <TextView
-            android:gravity="right"
-            android:padding="8dp"
-            android:text="p" />
-
-        <TextView
-            android:gravity="right"
-            android:padding="8dp"
-            android:text="p" />
-
-        <TextView
-            android:gravity="right"
-            android:padding="8dp"
-            android:text="p" />
-    </TableRow>
-
-    <TableRow>
-
-        <TextView
-            android:padding="8dp"
-            android:text="player2" />
-
-        <TextView
-            android:gravity="right"
-            android:padding="@dimen/cells_padding"
-            android:text="p" />
-
-        <TextView
-            android:gravity="right"
-            android:padding="8dp"
-            android:text="p" />
-
-        <TextView
-            android:gravity="right"
-            android:padding="8dp"
-            android:text="p" />
-
-        <TextView
-            android:gravity="right"
-            android:padding="8dp"
-            android:text="p" />
-
-        <TextView
-            android:gravity="right"
-            android:padding="8dp"
-            android:text="p" />
-
-        <TextView
-            android:gravity="right"
-            android:padding="8dp"
-            android:text="p" />
-    </TableRow>
-
-    <TableRow>
-
-        <TextView
-            android:padding="8dp"
-            android:text="player3" />
-
-        <TextView
-            android:gravity="right"
-            android:padding="@dimen/cells_padding"
-            android:text="p" />
-
-        <TextView
-            android:gravity="right"
-            android:padding="8dp"
-            android:text="p" />
-
-        <TextView
-            android:gravity="right"
-            android:padding="8dp"
-            android:text="p" />
-
-        <TextView
-            android:gravity="right"
-            android:padding="8dp"
-            android:text="p" />
-
-        <TextView
-            android:gravity="right"
-            android:padding="8dp"
-            android:text="p" />
-
-        <TextView
-            android:gravity="right"
-            android:padding="8dp"
-            android:text="p" />
-    </TableRow>
-
-    <TableRow>
-
-        <TextView
-            android:padding="8dp"
-            android:text="player4" />
-
-        <TextView
-            android:gravity="right"
-            android:padding="@dimen/cells_padding"
-            android:text="p" />
-
-        <TextView
-            android:gravity="right"
-            android:padding="8dp"
-            android:text="p" />
-
-        <TextView
-            android:gravity="right"
-            android:padding="8dp"
-            android:text="p" />
-
-        <TextView
-            android:gravity="right"
-            android:padding="8dp"
-            android:text="p" />
-
-        <TextView
-            android:gravity="right"
-            android:padding="8dp"
-            android:text="p" />
-
-        <TextView
-            android:gravity="right"
-            android:padding="8dp"
-            android:text="p" />
-    </TableRow>
-
-
-</TableLayout>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Finish" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
