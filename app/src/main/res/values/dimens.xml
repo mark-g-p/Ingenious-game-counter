@@ -2,4 +2,5 @@
 <resources>
     <dimen name="cells_padding">8dp</dimen>
     <dimen name="cell_padding">8dp</dimen>
+    <dimen name="button_margin">8dp</dimen>
 </resources>

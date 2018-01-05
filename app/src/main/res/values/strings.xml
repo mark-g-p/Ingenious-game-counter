@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Ingenious_counter</string>
+    <string name="zero">0</string>
+    <string name="player1">Player1</string>
+    <string name="player2">Player2</string>
+    <string name="player3">Player3</string>
+    <string name="player4">Player4</string>
+    <string name="winner">Winner</string>
+    <string name="next">Next</string>
+    <string name="reset">Reset</string>
+    <string name="check">Check</string>
+    <string name="currently_winning">Currently winning</string>
 </resources>
