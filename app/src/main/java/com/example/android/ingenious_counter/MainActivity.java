@@ -19,11 +19,23 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Player> players;
     private int active_player;
+    private TextView currentlyWinning;
+    private TableRow rowTable1;
+    private TableRow rowTable2;
+    private TableRow rowTable3;
+    private TableRow rowTable4;
+    private TableRow buttonPanel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        rowTable1 = findViewById(R.id.player1);
+        rowTable2 = findViewById(R.id.player2);
+        rowTable3 = findViewById(R.id.player3);
+        rowTable4 = findViewById(R.id.player4);
+        currentlyWinning = findViewById(R.id.winner);
+        buttonPanel = findViewById(R.id.button_panel);
         start();
     }
 
@@ -92,23 +104,20 @@ public class MainActivity extends AppCompatActivity {
 
         players = new ArrayList<>(0);
 
-        TableRow rowTable = findViewById(R.id.player1);
-        Player player1 = new Player(rowTable);
+
+        Player player1 = new Player(rowTable1);
         displayPoints(player1);
         players.add(player1);
 
-        rowTable = findViewById(R.id.player2);
-        Player player2 = new Player(rowTable);
+        Player player2 = new Player(rowTable2);
         displayPoints(player2);
         players.add(player2);
 
-        rowTable = findViewById(R.id.player3);
-        Player player3 = new Player(rowTable);
+        Player player3 = new Player(rowTable3);
         displayPoints(player3);
         players.add(player3);
 
-        rowTable = findViewById(R.id.player4);
-        Player player4 = new Player(rowTable);
+        Player player4 = new Player(rowTable4);
         displayPoints(player4);
         players.add(player4);
 
@@ -163,7 +172,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Displaying functions.
     private void displayWinner(String winner) {
-        TextView currentlyWinning = findViewById(R.id.winner);
+
         currentlyWinning.setText(winner);
     }
 
@@ -192,7 +201,7 @@ public class MainActivity extends AppCompatActivity {
 //             When player reaches 18 points in one color he gets 'genius'.
 //             Change color of TextView when it happens.
             if (point == 18) {
-                TableRow buttonPanel = findViewById(R.id.button_panel);
+
                 Button button = (Button) buttonPanel.getChildAt(i);
                 ColorDrawable buttonColor = (ColorDrawable) button.getBackground();
                 pointCell.setBackgroundColor(buttonColor.getColor());
