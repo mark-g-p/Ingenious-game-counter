@@ -3,4 +3,7 @@
     <dimen name="cells_padding">8dp</dimen>
     <dimen name="cell_padding">8dp</dimen>
     <dimen name="button_margin">8dp</dimen>
+    <dimen name="table_margin">32dp</dimen>
+    <dimen name="row_padding">16dp</dimen>
+    <dimen name="winner_padding">32dp</dimen>
 </resources>

@@ -17,7 +17,8 @@
             <TableRow
                 android:id="@+id/button_panel"
                 android:paddingLeft="16dp"
-                android:paddingRight="16dp">
+                android:paddingRight="16dp"
+                android:layout_marginTop="@dimen/table_margin">
 
                 <TextView
                     android:layout_width="0dp"
@@ -90,7 +91,7 @@
 
             <TableRow
                 android:id="@+id/player1"
-                android:padding="16dp">
+                android:padding="@dimen/row_padding">
 
                 <TextView
                     android:layout_width="0dp"
@@ -372,7 +373,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/winner"
-            android:textColor="@color/colorPrimaryDark" />
+            android:textColor="@color/colorPrimaryDark"
+            android:padding="@dimen/winner_padding"/>
 
         <LinearLayout style="?android:buttonBarStyle"
             android:layout_width="wrap_content"
