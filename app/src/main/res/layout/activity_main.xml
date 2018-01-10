@@ -21,66 +21,38 @@
                 android:paddingRight="16dp">
 
                 <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:gravity="center"
-                    android:padding="@dimen/cell_padding"
+                    style="@style/NameCellStyle"
                     android:text="" />
 
                 <Button
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/PointCellStyle"
                     android:background="@color/colorRedStar"
-                    android:gravity="center"
-                    android:onClick="addPoint1"
-                    android:padding="@dimen/cell_padding" />
+                    android:onClick="addPoint1" />
 
                 <Button
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/PointCellStyle"
                     android:background="@color/colorGreenCircle"
-                    android:gravity="center"
-                    android:onClick="addPoint2"
-                    android:padding="@dimen/cell_padding" />
+                    android:onClick="addPoint2" />
 
                 <Button
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/PointCellStyle"
                     android:background="@color/colorBlueStar"
-                    android:gravity="center"
-                    android:onClick="addPoint3"
-                    android:padding="@dimen/cell_padding" />
+                    android:onClick="addPoint3" />
 
                 <Button
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/PointCellStyle"
                     android:background="@color/colorOrangeHexagon"
-                    android:gravity="center"
-                    android:onClick="addPoint4"
-                    android:padding="@dimen/cell_padding" />
+                    android:onClick="addPoint4" />
 
                 <Button
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/PointCellStyle"
                     android:background="@color/colorYellowStar"
-                    android:gravity="center"
-                    android:onClick="addPoint5"
-                    android:padding="@dimen/cell_padding" />
+                    android:onClick="addPoint5" />
 
                 <Button
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/PointCellStyle"
                     android:background="@color/colorPurpleRing"
-                    android:gravity="center"
-                    android:onClick="addPoint6"
-                    android:padding="@dimen/cell_padding" />
+                    android:onClick="addPoint6" />
             </LinearLayout>
 
             <LinearLayout
@@ -88,65 +60,37 @@
                 android:padding="@dimen/row_padding">
 
                 <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:gravity="center"
-                    android:padding="@dimen/cell_padding"
+                    style="@style/NameCellStyle"
                     android:text="@string/player1" />
 
                 <TextView
                     android:id="@+id/player1_i1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="@dimen/cell_padding"
+                    style="@style/PointCellStyle"
                     android:text="@string/zero" />
 
                 <TextView
                     android:id="@+id/player1_i2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="@dimen/cell_padding"
+                    style="@style/PointCellStyle"
                     android:text="@string/zero" />
 
                 <TextView
                     android:id="@+id/player1_i3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="@dimen/cell_padding"
+                    style="@style/PointCellStyle"
                     android:text="@string/zero" />
 
                 <TextView
                     android:id="@+id/player1_i4"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="@dimen/cell_padding"
+                    style="@style/PointCellStyle"
                     android:text="@string/zero" />
 
                 <TextView
                     android:id="@+id/player1_i5"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="@dimen/cell_padding"
+                    style="@style/PointCellStyle"
                     android:text="@string/zero" />
 
                 <TextView
                     android:id="@+id/player1_i6"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="@dimen/cell_padding"
+                    style="@style/PointCellStyle"
                     android:text="@string/zero" />
             </LinearLayout>
 
@@ -155,65 +99,37 @@
                 android:padding="16dp">
 
                 <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:gravity="center"
-                    android:padding="@dimen/cell_padding"
+                    style="@style/NameCellStyle"
                     android:text="@string/player2" />
 
                 <TextView
                     android:id="@+id/player2_i1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="@dimen/cell_padding"
+                    style="@style/PointCellStyle"
                     android:text="@string/zero" />
 
                 <TextView
                     android:id="@+id/player2_i2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="@dimen/cell_padding"
+                    style="@style/PointCellStyle"
                     android:text="@string/zero" />
 
                 <TextView
                     android:id="@+id/player2_i3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="@dimen/cell_padding"
+                    style="@style/PointCellStyle"
                     android:text="@string/zero" />
 
                 <TextView
                     android:id="@+id/player2_i4"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="@dimen/cell_padding"
+                    style="@style/PointCellStyle"
                     android:text="@string/zero" />
 
                 <TextView
                     android:id="@+id/player2_i5"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="@dimen/cell_padding"
+                    style="@style/PointCellStyle"
                     android:text="@string/zero" />
 
                 <TextView
                     android:id="@+id/player2_i6"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="@dimen/cell_padding"
+                    style="@style/PointCellStyle"
                     android:text="@string/zero" />
             </LinearLayout>
 
@@ -222,65 +138,37 @@
                 android:padding="16dp">
 
                 <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:gravity="center"
-                    android:padding="@dimen/cell_padding"
+                    style="@style/NameCellStyle"
                     android:text="@string/player3" />
 
                 <TextView
                     android:id="@+id/player3_i1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="@dimen/cell_padding"
+                    style="@style/PointCellStyle"
                     android:text="@string/zero" />
 
                 <TextView
                     android:id="@+id/player3_i2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="@dimen/cell_padding"
+                    style="@style/PointCellStyle"
                     android:text="@string/zero" />
 
                 <TextView
                     android:id="@+id/player3_i3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="@dimen/cell_padding"
+                    style="@style/PointCellStyle"
                     android:text="@string/zero" />
 
                 <TextView
                     android:id="@+id/player3_i4"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="@dimen/cell_padding"
+                    style="@style/PointCellStyle"
                     android:text="@string/zero" />
 
                 <TextView
                     android:id="@+id/player3_i5"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="@dimen/cell_padding"
+                    style="@style/PointCellStyle"
                     android:text="@string/zero" />
 
                 <TextView
                     android:id="@+id/player3_i6"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="@dimen/cell_padding"
+                    style="@style/PointCellStyle"
                     android:text="@string/zero" />
             </LinearLayout>
 
@@ -289,115 +177,69 @@
                 android:padding="16dp">
 
                 <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:gravity="center"
-                    android:padding="@dimen/cell_padding"
+                    style="@style/NameCellStyle"
                     android:text="@string/player4" />
 
                 <TextView
                     android:id="@+id/player4_i1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="@dimen/cell_padding"
+                    style="@style/PointCellStyle"
                     android:text="@string/zero" />
 
                 <TextView
                     android:id="@+id/player4_i2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="@dimen/cell_padding"
+                    style="@style/PointCellStyle"
                     android:text="@string/zero" />
 
                 <TextView
                     android:id="@+id/player4_i3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="@dimen/cell_padding"
+                    style="@style/PointCellStyle"
                     android:text="@string/zero" />
 
                 <TextView
                     android:id="@+id/player4_i4"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="@dimen/cell_padding"
+                    style="@style/PointCellStyle"
                     android:text="@string/zero" />
 
                 <TextView
                     android:id="@+id/player4_i5"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="@dimen/cell_padding"
+                    style="@style/PointCellStyle"
                     android:text="@string/zero" />
 
                 <TextView
                     android:id="@+id/player4_i6"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="@dimen/cell_padding"
+                    style="@style/PointCellStyle"
                     android:text="@string/zero" />
             </LinearLayout>
 
         </TableLayout>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:padding="8dp"
-            android:text="@string/currently_winning" />
+            android:text="@string/currently_winning"
+            style="@style/NormalTextStyle" />
 
         <TextView
             android:id="@+id/winner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:padding="@dimen/winner_padding"
             android:text="@string/winner"
-            android:textColor="@color/colorPrimaryDark" />
+            style="@style/WinnerNameStyle" />
 
-        <LinearLayout
-            style="?android:buttonBarStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center">
+
+        <LinearLayout style="@style/CustomButtonBarStyle">
 
             <Button
-                style="?android:buttonBarButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/button_margin"
+                style="@style/CustomButtonBarButtonStyle"
                 android:onClick="nextPlayer"
                 android:text="@string/next" />
 
             <Button
-                style="?android:buttonBarButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/button_margin"
+                style="@style/CustomButtonBarButtonStyle"
                 android:onClick="reset"
                 android:text="@string/reset" />
 
             <Button
-                style="?android:buttonBarButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/button_margin"
+                style="@style/CustomButtonBarButtonStyle"
                 android:onClick="getWinner"
                 android:text="@string/check" />
         </LinearLayout>
+
     </LinearLayout>
 </ScrollView>
