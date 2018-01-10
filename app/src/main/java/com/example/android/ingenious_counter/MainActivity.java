@@ -1,6 +1,8 @@
 package com.example.android.ingenious_counter;
 
 import android.graphics.drawable.ColorDrawable;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -39,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         start();
     }
 
-    protected class Player implements Comparable<Player> {
+    protected static class Player implements Comparable<Player>, Parcelable {
 
         private String name;
         private ArrayList<Integer> points;
@@ -57,17 +59,11 @@ public class MainActivity extends AppCompatActivity {
             TextView nameField = (TextView) pointsTable.getChildAt(0);
             name = nameField.getText().toString();
 
-
             // Fill points table with zeroes.
             points = new ArrayList<>(0);
             for (int i = 0; i < index; i++) {
                 points.add(0);
             }
-        }
-
-        @Override
-        public int compareTo(@NonNull Player otherPlayer) {
-            return this.getScore() - otherPlayer.getScore();
         }
 
         TableRow getTableRow() {
@@ -92,9 +88,42 @@ public class MainActivity extends AppCompatActivity {
                 points.set(index, ++currentPoints);
                 //Set first element of the points as player's score.
                 points.set(0, Collections.min(points.subList(1, points.size())));
-                displayPoints(players.get(active_player));
+
             }
         }
+
+        //        Part needed for Interface Comparable<Player>
+        @Override
+        public int compareTo(@NonNull Player otherPlayer) {
+            return this.getScore() - otherPlayer.getScore();
+        }
+
+        //        Part needed for Interface Parcelable
+        public int describeContents() {
+            return 0;
+        }
+
+        public void writeToParcel(Parcel out, int flags) {
+            out.writeString(name);
+            out.writeSerializable(points);
+        }
+
+        public static final Parcelable.Creator<Player> CREATOR
+                = new Parcelable.Creator<Player>() {
+            public Player createFromParcel(Parcel in) {
+                return new Player(in);
+            }
+
+            public Player[] newArray(int size) {
+                return new Player[size];
+            }
+        };
+
+        private Player(Parcel in) {
+            name = in.readString();
+        }
+
+
     }
 
     /**
@@ -131,27 +160,34 @@ public class MainActivity extends AppCompatActivity {
     * Fuctions used by buttons*/
     public void addPoint1(View view) {
         players.get(active_player).addPointTo(1);
+        displayPoints(players.get(active_player));
     }
 
     public void addPoint2(View view) {
         players.get(active_player).addPointTo(2);
+        displayPoints(players.get(active_player));
     }
 
     public void addPoint3(View view) {
         players.get(active_player).addPointTo(3);
+        displayPoints(players.get(active_player));
     }
 
     public void addPoint4(View view) {
         players.get(active_player).addPointTo(4);
+        displayPoints(players.get(active_player));
     }
 
     public void addPoint5(View view) {
         players.get(active_player).addPointTo(5);
+        displayPoints(players.get(active_player));
     }
 
     public void addPoint6(View view) {
         players.get(active_player).addPointTo(6);
+        displayPoints(players.get(active_player));
     }
+
 
     //    Give turn to the next player. Back to first player after one round.
     public void nextPlayer(View view) {
