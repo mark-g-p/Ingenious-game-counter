@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TableRow
+            <LinearLayout
                 android:id="@+id/button_panel"
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
@@ -87,9 +87,9 @@
                     android:onClick="addPoint6"
                     android:padding="@dimen/cell_padding"
                      />
-            </TableRow>
+            </LinearLayout>
 
-            <TableRow
+            <LinearLayout
                 android:id="@+id/player1"
                 android:padding="@dimen/row_padding">
 
@@ -154,9 +154,9 @@
                     android:gravity="center"
                     android:padding="@dimen/cell_padding"
                     android:text="@string/zero" />
-            </TableRow>
+            </LinearLayout>
 
-            <TableRow
+            <LinearLayout
                 android:id="@+id/player2"
                 android:padding="16dp">
 
@@ -221,9 +221,9 @@
                     android:gravity="center"
                     android:padding="@dimen/cell_padding"
                     android:text="@string/zero" />
-            </TableRow>
+            </LinearLayout>
 
-            <TableRow
+            <LinearLayout
                 android:id="@+id/player3"
                 android:padding="16dp">
 
@@ -288,9 +288,9 @@
                     android:gravity="center"
                     android:padding="@dimen/cell_padding"
                     android:text="@string/zero" />
-            </TableRow>
+            </LinearLayout>
 
-            <TableRow
+            <LinearLayout
                 android:id="@+id/player4"
                 android:padding="16dp">
 
@@ -355,7 +355,7 @@
                     android:gravity="center"
                     android:padding="@dimen/cell_padding"
                     android:text="@string/zero" />
-            </TableRow>
+            </LinearLayout>
 
 
         </TableLayout>

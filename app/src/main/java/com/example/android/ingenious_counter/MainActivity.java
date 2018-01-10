@@ -9,7 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TableRow;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -22,20 +22,20 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Player> players;
     private int active_player;
     private TextView currentlyWinning;
-    private TableRow rowTable1;
-    private TableRow rowTable2;
-    private TableRow rowTable3;
-    private TableRow rowTable4;
-    private TableRow buttonPanel;
+    private LinearLayout row1;
+    private LinearLayout row2;
+    private LinearLayout row3;
+    private LinearLayout row4;
+    private LinearLayout buttonPanel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        rowTable1 = findViewById(R.id.player1);
-        rowTable2 = findViewById(R.id.player2);
-        rowTable3 = findViewById(R.id.player3);
-        rowTable4 = findViewById(R.id.player4);
+        row1 = findViewById(R.id.player1);
+        row2 = findViewById(R.id.player2);
+        row3 = findViewById(R.id.player3);
+        row4 = findViewById(R.id.player4);
         currentlyWinning = findViewById(R.id.winner);
         buttonPanel = findViewById(R.id.button_panel);
         start();
@@ -45,12 +45,12 @@ public class MainActivity extends AppCompatActivity {
 
         private String name;
         private ArrayList<Integer> points;
-        private TableRow tableRow;
+        private LinearLayout tableRow;
 
         /**
          * @param pointsTable row from table of points, contains player's name and points.
          */
-        private Player(TableRow pointsTable) {
+        private Player(LinearLayout pointsTable) {
 
             final int index = pointsTable.getChildCount();
             tableRow = pointsTable;
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        TableRow getTableRow() {
+        LinearLayout getLinearLayout() {
             return tableRow;
         }
 
@@ -134,25 +134,25 @@ public class MainActivity extends AppCompatActivity {
         players = new ArrayList<>(0);
 
 
-        Player player1 = new Player(rowTable1);
+        Player player1 = new Player(row1);
         displayPoints(player1);
         players.add(player1);
 
-        Player player2 = new Player(rowTable2);
+        Player player2 = new Player(row2);
         displayPoints(player2);
         players.add(player2);
 
-        Player player3 = new Player(rowTable3);
+        Player player3 = new Player(row3);
         displayPoints(player3);
         players.add(player3);
 
-        Player player4 = new Player(rowTable4);
+        Player player4 = new Player(row4);
         displayPoints(player4);
         players.add(player4);
 
-        revertColors(players.get(active_player).getTableRow().getChildAt(0));
+        revertColors(players.get(active_player).getLinearLayout().getChildAt(0));
         active_player = 0;
-        setActivePlayer(players.get(active_player).getTableRow().getChildAt(0));
+        setActivePlayer(players.get(active_player).getLinearLayout().getChildAt(0));
         displayWinner("None");
     }
 
@@ -191,9 +191,9 @@ public class MainActivity extends AppCompatActivity {
 
     //    Give turn to the next player. Back to first player after one round.
     public void nextPlayer(View view) {
-        revertColors(players.get(active_player).getTableRow().getChildAt(0));
+        revertColors(players.get(active_player).getLinearLayout().getChildAt(0));
         active_player = (active_player + 1) % players.size();
-        setActivePlayer(players.get(active_player).getTableRow().getChildAt(0));
+        setActivePlayer(players.get(active_player).getLinearLayout().getChildAt(0));
     }
 
     // Resets all points 0.
@@ -223,7 +223,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void displayPoints(Player playersPoints) {
 
-        TableRow playersPointsView = playersPoints.getTableRow();
+        LinearLayout playersPointsView = playersPoints.getLinearLayout();
 
         int index = playersPointsView.getChildCount();
 
