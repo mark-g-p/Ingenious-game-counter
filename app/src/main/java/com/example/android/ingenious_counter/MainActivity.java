@@ -1,6 +1,5 @@
 package com.example.android.ingenious_counter;
 
-import android.graphics.drawable.ColorDrawable;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
@@ -8,7 +7,6 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -25,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
     private int activePlayer;
     private TextView currentlyWinning;
     private ArrayList<LinearLayout> rows;
-    private LinearLayout buttonPanel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         rows.add((LinearLayout) findViewById(R.id.player3));
         rows.add((LinearLayout) findViewById(R.id.player4));
         currentlyWinning = findViewById(R.id.winner);
-        buttonPanel = findViewById(R.id.button_panel);
         if (savedInstanceState != null) {
             onRestoreInstanceState(savedInstanceState);
             getWinner(null);
@@ -260,10 +256,28 @@ public class MainActivity extends AppCompatActivity {
 //             When player reaches 18 points in one color he gets 'genius'.
 //             Change color of TextView when it happens.
             if (point == 18) {
-
-                Button button = (Button) buttonPanel.getChildAt(i);
-                ColorDrawable buttonColor = (ColorDrawable) button.getBackground();
-                pointCell.setBackgroundColor(buttonColor.getColor());
+                switch (i) {
+                    case 1:
+                        pointCell.setBackgroundColor(ContextCompat.getColor(this, R.color.colorRedStar));
+                        break;
+                    case 2:
+                        pointCell.setBackgroundColor(ContextCompat.getColor(this, R.color.colorGreenCircle));
+                        break;
+                    case 3:
+                        pointCell.setBackgroundColor(ContextCompat.getColor(this, R.color.colorBlueStar));
+                        break;
+                    case 4:
+                        pointCell.setBackgroundColor(ContextCompat.getColor(this, R.color.colorOrangeHexagon));
+                        break;
+                    case 5:
+                        pointCell.setBackgroundColor(ContextCompat.getColor(this, R.color.colorYellowStar));
+                        break;
+                    case 6:
+                        pointCell.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPurpleRing));
+                        break;
+                    default:
+                        break;
+                }
             }
             pointCell.setText(String.valueOf(point));
         }

@@ -10,4 +10,10 @@
     <string name="reset">Reset</string>
     <string name="check">Check</string>
     <string name="currently_winning">Currently winning</string>
+    <string name="red_star">Red Star</string>
+    <string name="green_circle">Green Circle</string>
+    <string name="blue_star">Blue Star</string>
+    <string name="orange_hexagon">Orange Hexagon</string>
+    <string name="yellow_star">Yellow Star</string>
+    <string name="purple_ring">Purple Ring</string>
 </resources>

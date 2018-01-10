@@ -17,42 +17,50 @@
             <LinearLayout
                 android:id="@+id/button_panel"
                 android:layout_marginTop="@dimen/table_margin"
+                android:background="@color/colorActive"
                 android:paddingLeft="16dp"
-                android:paddingRight="16dp">
+                android:paddingRight="16dp"
+                >
 
                 <TextView
                     style="@style/NameCellStyle"
                     android:text="" />
 
-                <Button
-                    style="@style/PointCellStyle"
-                    android:background="@color/colorRedStar"
-                    android:onClick="addPoint1" />
+                <ImageButton
+                    android:contentDescription="@string/red_star"
+                    style="@style/ShapesCellStyle"
+                    android:onClick="addPoint1"
+                    android:src="@drawable/ic_red_star" />
 
-                <Button
-                    style="@style/PointCellStyle"
-                    android:background="@color/colorGreenCircle"
-                    android:onClick="addPoint2" />
+                <ImageButton
+                    android:contentDescription="@string/green_circle"
+                    style="@style/ShapesCellStyle"
+                    android:onClick="addPoint2"
+                    android:src="@drawable/ic_green_circle" />
 
-                <Button
-                    style="@style/PointCellStyle"
-                    android:background="@color/colorBlueStar"
-                    android:onClick="addPoint3" />
+                <ImageButton
+                    android:contentDescription="@string/blue_star"
+                    style="@style/ShapesCellStyle"
+                    android:onClick="addPoint3"
+                    android:src="@drawable/ic_blue_star" />
 
-                <Button
-                    style="@style/PointCellStyle"
-                    android:background="@color/colorOrangeHexagon"
-                    android:onClick="addPoint4" />
+                <ImageButton
+                    android:contentDescription="@string/orange_hexagon"
+                    style="@style/ShapesCellStyle"
+                    android:onClick="addPoint4"
+                    android:src="@drawable/ic_orange_hexagon" />
 
-                <Button
-                    style="@style/PointCellStyle"
-                    android:background="@color/colorYellowStar"
-                    android:onClick="addPoint5" />
+                <ImageButton
+                    android:contentDescription="@string/yellow_star"
+                    style="@style/ShapesCellStyle"
+                    android:onClick="addPoint5"
+                    android:src="@drawable/ic_yellow_star" />
 
-                <Button
-                    style="@style/PointCellStyle"
-                    android:background="@color/colorPurpleRing"
-                    android:onClick="addPoint6" />
+                <ImageButton
+                    android:contentDescription="@string/purple_ring"
+                    style="@style/ShapesCellStyle"
+                    android:onClick="addPoint6"
+                    android:src="@drawable/ic_purple_circle" />
             </LinearLayout>
 
             <LinearLayout
@@ -214,13 +222,13 @@
         </TableLayout>
 
         <TextView
-            android:text="@string/currently_winning"
-            style="@style/NormalTextStyle" />
+            style="@style/NormalTextStyle"
+            android:text="@string/currently_winning" />
 
         <TextView
             android:id="@+id/winner"
-            android:text="@string/winner"
-            style="@style/WinnerNameStyle" />
+            style="@style/WinnerNameStyle"
+            android:text="@string/winner" />
 
 
         <LinearLayout style="@style/CustomButtonBarStyle">

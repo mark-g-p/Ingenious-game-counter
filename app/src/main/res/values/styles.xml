@@ -18,9 +18,14 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
         <item name="android:gravity">center</item>
+        <item name="android:background">@color/colorPointsTable</item>
         <item name="android:padding">@dimen/cell_padding</item>
     </style>
-
+    <style name="ShapesCellStyle" parent="@style/PointCellStyle">
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:adjustViewBounds">true</item>
+    </style>
     <style name="NameCellStyle">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
