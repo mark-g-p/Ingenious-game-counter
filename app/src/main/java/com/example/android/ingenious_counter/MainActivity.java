@@ -19,33 +19,77 @@ import java.util.Collections;
 public class MainActivity extends AppCompatActivity {
 
 
+    private static final String PLAYERS_LIST = "players";
+    private static final String ACTIVE_PLAYER = "activePlayer";
     private ArrayList<Player> players;
-    private int active_player;
+    private int activePlayer;
     private TextView currentlyWinning;
-    private LinearLayout row1;
-    private LinearLayout row2;
-    private LinearLayout row3;
-    private LinearLayout row4;
+    private ArrayList<LinearLayout> rows;
     private LinearLayout buttonPanel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        row1 = findViewById(R.id.player1);
-        row2 = findViewById(R.id.player2);
-        row3 = findViewById(R.id.player3);
-        row4 = findViewById(R.id.player4);
+
+
+        rows = new ArrayList<>(0);
+        rows.add((LinearLayout) findViewById(R.id.player1));
+        rows.add((LinearLayout) findViewById(R.id.player2));
+        rows.add((LinearLayout) findViewById(R.id.player3));
+        rows.add((LinearLayout) findViewById(R.id.player4));
         currentlyWinning = findViewById(R.id.winner);
         buttonPanel = findViewById(R.id.button_panel);
-        start();
+        if (savedInstanceState != null) {
+            onRestoreInstanceState(savedInstanceState);
+            getWinner(null);
+        } else {
+            players = new ArrayList<>(0);
+//          Add players to the game
+            for (int i = 0; i < rows.size(); i++) {
+                players.add(new Player(rows.get(i)));
+            }
+            activePlayer = 0;
+            displayWinner("None");
+        }
+
+        for (int i = 0; i < rows.size(); i++) {
+            displayPoints(i);
+        }
+
+
+        revertColors(rows.get(activePlayer).getChildAt(0));
+
+        setActivePlayer(rows.get(activePlayer).getChildAt(0));
+
+
     }
 
+    // invoked when the activity may be temporarily destroyed, save the instance state here
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putSerializable(PLAYERS_LIST, players);
+        savedInstanceState.putInt(ACTIVE_PLAYER, activePlayer);
+
+        // call superclass to save any view hierarchy
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        // Always call the superclass so it can restore the view hierarchy
+        super.onRestoreInstanceState(savedInstanceState);
+
+
+        // Restore state members from saved instance
+        players = (ArrayList<Player>) savedInstanceState.getSerializable(PLAYERS_LIST);
+        activePlayer = savedInstanceState.getInt(ACTIVE_PLAYER);
+    }
+
+    //  Player class definition.
     protected static class Player implements Comparable<Player>, Parcelable {
 
         private String name;
         private ArrayList<Integer> points;
-        private LinearLayout tableRow;
 
         /**
          * @param pointsTable row from table of points, contains player's name and points.
@@ -53,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         private Player(LinearLayout pointsTable) {
 
             final int index = pointsTable.getChildCount();
-            tableRow = pointsTable;
+
 
             // Get player name
             TextView nameField = (TextView) pointsTable.getChildAt(0);
@@ -64,10 +108,6 @@ public class MainActivity extends AppCompatActivity {
             for (int i = 0; i < index; i++) {
                 points.add(0);
             }
-        }
-
-        LinearLayout getLinearLayout() {
-            return tableRow;
         }
 
         String getName() {
@@ -121,6 +161,7 @@ public class MainActivity extends AppCompatActivity {
 
         private Player(Parcel in) {
             name = in.readString();
+            points = (ArrayList<Integer>) in.readSerializable();
         }
 
 
@@ -129,76 +170,58 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method resets all points setting them to 0.
      */
-    public void start() {
 
-        players = new ArrayList<>(0);
-
-
-        Player player1 = new Player(row1);
-        displayPoints(player1);
-        players.add(player1);
-
-        Player player2 = new Player(row2);
-        displayPoints(player2);
-        players.add(player2);
-
-        Player player3 = new Player(row3);
-        displayPoints(player3);
-        players.add(player3);
-
-        Player player4 = new Player(row4);
-        displayPoints(player4);
-        players.add(player4);
-
-        revertColors(players.get(active_player).getLinearLayout().getChildAt(0));
-        active_player = 0;
-        setActivePlayer(players.get(active_player).getLinearLayout().getChildAt(0));
-        displayWinner("None");
-    }
-
-    /*
-    * Fuctions used by buttons*/
+    /* Fuctions used by buttons*/
     public void addPoint1(View view) {
-        players.get(active_player).addPointTo(1);
-        displayPoints(players.get(active_player));
+        players.get(activePlayer).addPointTo(1);
+        displayPoints(activePlayer);
     }
 
     public void addPoint2(View view) {
-        players.get(active_player).addPointTo(2);
-        displayPoints(players.get(active_player));
+        players.get(activePlayer).addPointTo(2);
+        displayPoints(activePlayer);
     }
 
     public void addPoint3(View view) {
-        players.get(active_player).addPointTo(3);
-        displayPoints(players.get(active_player));
+        players.get(activePlayer).addPointTo(3);
+        displayPoints(activePlayer);
     }
 
     public void addPoint4(View view) {
-        players.get(active_player).addPointTo(4);
-        displayPoints(players.get(active_player));
+        players.get(activePlayer).addPointTo(4);
+        displayPoints(activePlayer);
     }
 
     public void addPoint5(View view) {
-        players.get(active_player).addPointTo(5);
-        displayPoints(players.get(active_player));
+        players.get(activePlayer).addPointTo(5);
+        displayPoints(activePlayer);
     }
 
     public void addPoint6(View view) {
-        players.get(active_player).addPointTo(6);
-        displayPoints(players.get(active_player));
+        players.get(activePlayer).addPointTo(6);
+        displayPoints(activePlayer);
     }
-
 
     //    Give turn to the next player. Back to first player after one round.
     public void nextPlayer(View view) {
-        revertColors(players.get(active_player).getLinearLayout().getChildAt(0));
-        active_player = (active_player + 1) % players.size();
-        setActivePlayer(players.get(active_player).getLinearLayout().getChildAt(0));
+        revertColors(rows.get(activePlayer).getChildAt(0));
+        activePlayer = (activePlayer + 1) % players.size();
+        setActivePlayer(rows.get(activePlayer).getChildAt(0));
     }
 
     // Resets all points 0.
     public void reset(View view) {
-        start();
+
+        players = new ArrayList<>(0);
+//        Add players to the game
+        for (int i = 0; i < rows.size(); i++) {
+            players.add(new Player(rows.get(i)));
+            displayPoints(i);
+        }
+        revertColors(rows.get(activePlayer).getChildAt(0));
+        activePlayer = 0;
+        setActivePlayer(rows.get(activePlayer).getChildAt(0));
+        displayWinner("None");
     }
 
     public void getWinner(View view) {
@@ -221,10 +244,10 @@ public class MainActivity extends AppCompatActivity {
         view.setBackgroundColor(ContextCompat.getColor(this, R.color.colorActive));
     }
 
-    private void displayPoints(Player playersPoints) {
+    private void displayPoints(int active_player) {
 
-        LinearLayout playersPointsView = playersPoints.getLinearLayout();
-
+        LinearLayout playersPointsView = rows.get(active_player);
+        Player playersPoints = players.get(active_player);
         int index = playersPointsView.getChildCount();
 
         for (int i = 1; i < index; i++) {
@@ -245,6 +268,5 @@ public class MainActivity extends AppCompatActivity {
             pointCell.setText(String.valueOf(point));
         }
     }
-
 
 }
