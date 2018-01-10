@@ -192,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
     //    Give turn to the next player. Back to first player after one round.
     public void nextPlayer(View view) {
         revertColors(players.get(active_player).getTableRow().getChildAt(0));
-        active_player = (active_player + 1) % 4;
+        active_player = (active_player + 1) % players.size();
         setActivePlayer(players.get(active_player).getTableRow().getChildAt(0));
     }
 
