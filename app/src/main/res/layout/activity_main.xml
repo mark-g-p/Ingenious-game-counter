@@ -16,9 +16,9 @@
 
             <LinearLayout
                 android:id="@+id/button_panel"
+                android:layout_marginTop="@dimen/table_margin"
                 android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:layout_marginTop="@dimen/table_margin">
+                android:paddingRight="16dp">
 
                 <TextView
                     android:layout_width="0dp"
@@ -35,8 +35,7 @@
                     android:background="@color/colorRedStar"
                     android:gravity="center"
                     android:onClick="addPoint1"
-                    android:padding="@dimen/cell_padding"
-                     />
+                    android:padding="@dimen/cell_padding" />
 
                 <Button
                     android:layout_width="0dp"
@@ -45,8 +44,7 @@
                     android:background="@color/colorGreenCircle"
                     android:gravity="center"
                     android:onClick="addPoint2"
-                    android:padding="@dimen/cell_padding"
-                     />
+                    android:padding="@dimen/cell_padding" />
 
                 <Button
                     android:layout_width="0dp"
@@ -55,8 +53,7 @@
                     android:background="@color/colorBlueStar"
                     android:gravity="center"
                     android:onClick="addPoint3"
-                    android:padding="@dimen/cell_padding"
-                     />
+                    android:padding="@dimen/cell_padding" />
 
                 <Button
                     android:layout_width="0dp"
@@ -65,8 +62,7 @@
                     android:background="@color/colorOrangeHexagon"
                     android:gravity="center"
                     android:onClick="addPoint4"
-                    android:padding="@dimen/cell_padding"
-                     />
+                    android:padding="@dimen/cell_padding" />
 
                 <Button
                     android:layout_width="0dp"
@@ -75,8 +71,7 @@
                     android:background="@color/colorYellowStar"
                     android:gravity="center"
                     android:onClick="addPoint5"
-                    android:padding="@dimen/cell_padding"
-                     />
+                    android:padding="@dimen/cell_padding" />
 
                 <Button
                     android:layout_width="0dp"
@@ -85,8 +80,7 @@
                     android:background="@color/colorPurpleRing"
                     android:gravity="center"
                     android:onClick="addPoint6"
-                    android:padding="@dimen/cell_padding"
-                     />
+                    android:padding="@dimen/cell_padding" />
             </LinearLayout>
 
             <LinearLayout
@@ -357,7 +351,6 @@
                     android:text="@string/zero" />
             </LinearLayout>
 
-
         </TableLayout>
 
         <TextView
@@ -372,31 +365,34 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:padding="@dimen/winner_padding"
             android:text="@string/winner"
-            android:textColor="@color/colorPrimaryDark"
-            android:padding="@dimen/winner_padding"/>
+            android:textColor="@color/colorPrimaryDark" />
 
-        <LinearLayout style="?android:buttonBarStyle"
+        <LinearLayout
+            style="?android:buttonBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center">
 
-            <Button style="?android:buttonBarButtonStyle"
-
+            <Button
+                style="?android:buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/button_margin"
                 android:onClick="nextPlayer"
                 android:text="@string/next" />
 
-            <Button style="?android:buttonBarButtonStyle"
+            <Button
+                style="?android:buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/button_margin"
                 android:onClick="reset"
                 android:text="@string/reset" />
 
-            <Button style="?android:buttonBarButtonStyle"
+            <Button
+                style="?android:buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/button_margin"
