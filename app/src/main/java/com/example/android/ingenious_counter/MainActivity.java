@@ -163,10 +163,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    /**
-     * This method resets all points setting them to 0.
-     */
-
     /* Fuctions used by buttons*/
     public void addPoint1(View view) {
         players.get(activePlayer).addPointTo(1);
@@ -207,9 +203,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Resets all points 0.
     public void reset(View view) {
-
         players = new ArrayList<>(0);
-//        Add players to the game
         for (int i = 0; i < rows.size(); i++) {
             players.add(new Player(rows.get(i)));
             displayPoints(i);
@@ -230,16 +224,6 @@ public class MainActivity extends AppCompatActivity {
 
         currentlyWinning.setText(winner);
     }
-
-    //
-    private void revertColors(View view) {
-        view.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPointsTable));
-    }
-
-    private void setActivePlayer(View view) {
-        view.setBackgroundColor(ContextCompat.getColor(this, R.color.colorActive));
-    }
-
     private void displayPoints(int active_player) {
 
         LinearLayout playersPointsView = rows.get(active_player);
@@ -282,5 +266,15 @@ public class MainActivity extends AppCompatActivity {
             pointCell.setText(String.valueOf(point));
         }
     }
+
+    private void revertColors(View view) {
+        view.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPointsTable));
+    }
+
+    private void setActivePlayer(View view) {
+        view.setBackgroundColor(ContextCompat.getColor(this, R.color.colorActive));
+    }
+
+
 
 }
