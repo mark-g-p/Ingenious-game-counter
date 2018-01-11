@@ -16,22 +16,13 @@
 
             <TextView
                 android:id="@+id/player1_score"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/zero"
-                android:textSize="56sp" />
+                style="@style/mainScoreStyle"
+                android:text="@string/zero" />
 
             <TextView
                 android:id="@+id/player2_score"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/zero"
-                android:textSize="56sp" />
+                style="@style/mainScoreStyle"
+                android:text="@string/zero" />
         </LinearLayout>
 
         <LinearLayout
@@ -41,11 +32,7 @@
 
             <LinearLayout
                 android:id="@+id/player1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="@dimen/row_padding">
+                style="@style/playerPointsStyle">
 
                 <TextView
                     style="@style/NameCellStyle"
@@ -57,7 +44,6 @@
                     android:layout_width="wrap_content"
                     android:drawableEnd="@drawable/ic_red_star"
                     android:drawableRight="@drawable/ic_red_star"
-                    android:enabled="true"
                     android:onClick="addPoint1"
                     android:text="@string/zero" />
 
@@ -66,7 +52,6 @@
                     style="@style/PointCellStyle"
                     android:drawableEnd="@drawable/ic_green_circle"
                     android:drawableRight="@drawable/ic_green_circle"
-                    android:enabled="true"
                     android:onClick="addPoint2"
                     android:text="@string/zero" />
 
@@ -75,7 +60,6 @@
                     style="@style/PointCellStyle"
                     android:drawableEnd="@drawable/ic_blue_star"
                     android:drawableRight="@drawable/ic_blue_star"
-                    android:enabled="true"
                     android:onClick="addPoint3"
                     android:text="@string/zero" />
 
@@ -84,7 +68,6 @@
                     style="@style/PointCellStyle"
                     android:drawableEnd="@drawable/ic_orange_hexagon"
                     android:drawableRight="@drawable/ic_orange_hexagon"
-                    android:enabled="true"
                     android:onClick="addPoint4"
                     android:text="@string/zero" />
 
@@ -93,7 +76,6 @@
                     style="@style/PointCellStyle"
                     android:drawableEnd="@drawable/ic_yellow_star"
                     android:drawableRight="@drawable/ic_yellow_star"
-                    android:enabled="true"
                     android:onClick="addPoint5"
                     android:text="@string/zero" />
 
@@ -102,71 +84,13 @@
                     style="@style/PointCellStyle"
                     android:drawableEnd="@drawable/ic_purple_circle"
                     android:drawableRight="@drawable/ic_purple_circle"
-                    android:enabled="true"
                     android:onClick="addPoint6"
                     android:text="@string/zero" />
             </LinearLayout>
 
-            <!--<LinearLayout-->
-            <!--android:id="@+id/button_panel"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_gravity="center"-->
-            <!--android:layout_margin="@dimen/table_margin"-->
-            <!--android:layout_weight="1"-->
-            <!--android:background="@color/colorActive"-->
-            <!--android:gravity="center"-->
-            <!--android:orientation="vertical">-->
-
-            <!--<TextView-->
-            <!--style="@style/NameCellStyle"-->
-            <!--android:text="" />-->
-
-            <!--<ImageButton-->
-            <!--style="@style/ShapesCellStyle"-->
-            <!--android:contentDescription="@string/red_star"-->
-            <!--android:onClick="addPoint1"-->
-            <!--android:src="@drawable/ic_red_star" />-->
-
-            <!--<ImageButton-->
-            <!--style="@style/ShapesCellStyle"-->
-            <!--android:contentDescription="@string/green_circle"-->
-            <!--android:onClick="addPoint2"-->
-            <!--android:src="@drawable/ic_green_circle" />-->
-
-            <!--<ImageButton-->
-            <!--style="@style/ShapesCellStyle"-->
-            <!--android:contentDescription="@string/blue_star"-->
-            <!--android:onClick="addPoint3"-->
-            <!--android:src="@drawable/ic_blue_star" />-->
-
-            <!--<ImageButton-->
-            <!--style="@style/ShapesCellStyle"-->
-            <!--android:contentDescription="@string/orange_hexagon"-->
-            <!--android:onClick="addPoint4"-->
-            <!--android:src="@drawable/ic_orange_hexagon" />-->
-
-            <!--<ImageButton-->
-            <!--style="@style/ShapesCellStyle"-->
-            <!--android:contentDescription="@string/yellow_star"-->
-            <!--android:onClick="addPoint5"-->
-            <!--android:src="@drawable/ic_yellow_star" />-->
-
-            <!--<ImageButton-->
-            <!--style="@style/ShapesCellStyle"-->
-            <!--android:contentDescription="@string/purple_ring"-->
-            <!--android:onClick="addPoint6"-->
-            <!--android:src="@drawable/ic_purple_circle" />-->
-            <!--</LinearLayout>-->
-
-
             <LinearLayout
                 android:id="@+id/player2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="@dimen/row_padding">
+                style="@style/playerPointsStyle">
 
                 <TextView
                     style="@style/NameCellStyle"
@@ -178,7 +102,6 @@
                     android:layout_width="wrap_content"
                     android:drawableEnd="@drawable/ic_red_star"
                     android:drawableRight="@drawable/ic_red_star"
-                    android:enabled="false"
                     android:onClick="addPoint1"
                     android:text="@string/zero" />
 
@@ -187,7 +110,6 @@
                     style="@style/PointCellStyle"
                     android:drawableEnd="@drawable/ic_green_circle"
                     android:drawableRight="@drawable/ic_green_circle"
-                    android:enabled="false"
                     android:onClick="addPoint2"
                     android:text="@string/zero" />
 
@@ -196,7 +118,6 @@
                     style="@style/PointCellStyle"
                     android:drawableEnd="@drawable/ic_blue_star"
                     android:drawableRight="@drawable/ic_blue_star"
-                    android:enabled="false"
                     android:onClick="addPoint3"
                     android:text="@string/zero" />
 
@@ -205,7 +126,6 @@
                     style="@style/PointCellStyle"
                     android:drawableEnd="@drawable/ic_orange_hexagon"
                     android:drawableRight="@drawable/ic_orange_hexagon"
-                    android:enabled="false"
                     android:onClick="addPoint4"
                     android:text="@string/zero" />
 
@@ -214,7 +134,6 @@
                     style="@style/PointCellStyle"
                     android:drawableEnd="@drawable/ic_yellow_star"
                     android:drawableRight="@drawable/ic_yellow_star"
-                    android:enabled="false"
                     android:onClick="addPoint5"
                     android:text="@string/zero" />
 
@@ -223,7 +142,6 @@
                     style="@style/PointCellStyle"
                     android:drawableEnd="@drawable/ic_purple_circle"
                     android:drawableRight="@drawable/ic_purple_circle"
-                    android:enabled="false"
                     android:onClick="addPoint6"
                     android:text="@string/zero" />
 
