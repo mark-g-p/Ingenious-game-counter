@@ -162,15 +162,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    /**
-     * This method resets all points setting them to 0.
-     */
-
-    public void displayScore() {
-        player1Score.setText(String.valueOf(players.get(0).getScore()));
-        player2Score.setText(String.valueOf(players.get(1).getScore()));
-    }
-
     /* Fuctions used by buttons*/
     public void addPoint1(View view) {
         players.get(activePlayer).addPointTo(1);
@@ -221,9 +212,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Resets all points 0.
     public void reset(View view) {
-
         players = new ArrayList<>(0);
-//        Add players to the game
         for (int i = 0; i < rows.size(); i++) {
             players.add(new Player(rows.get(i)));
             displayPoints(i);
@@ -247,26 +236,9 @@ public class MainActivity extends AppCompatActivity {
         currentlyWinning.setText(winner);
     }
 
-    private void revertColors(View view) {
-        view.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPointsTable));
-    }
-
-    private void toggleActiveButtons() {
-        int pointsLength = rows.get(activePlayer).getChildCount();
-        for (int j = 0; j < rows.size(); j++) {
-            if (j == activePlayer) {
-                for (int i = 1; i < pointsLength; i++) {
-                    rows.get(j).getChildAt(i).setEnabled(true);
-                }
-            } else { for (int i = 1; i < pointsLength; i++) {
-                rows.get(j).getChildAt(i).setEnabled(false);
-            }
-            }
-        }
-    }
-
-    private void setActivePlayer(View view) {
-        view.setBackgroundColor(ContextCompat.getColor(this, R.color.colorActive));
+    public void displayScore() {
+        player1Score.setText(String.valueOf(players.get(0).getScore()));
+        player2Score.setText(String.valueOf(players.get(1).getScore()));
     }
 
     private void displayPoints(int active_player) {
@@ -312,5 +284,30 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+
+    private void revertColors(View view) {
+        view.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPointsTable));
+    }
+
+    private void toggleActiveButtons() {
+        int pointsLength = rows.get(activePlayer).getChildCount();
+        for (int j = 0; j < rows.size(); j++) {
+            if (j == activePlayer) {
+                for (int i = 1; i < pointsLength; i++) {
+                    rows.get(j).getChildAt(i).setEnabled(true);
+                }
+            } else {
+                for (int i = 1; i < pointsLength; i++) {
+                    rows.get(j).getChildAt(i).setEnabled(false);
+                }
+            }
+        }
+    }
+
+    private void setActivePlayer(View view) {
+        view.setBackgroundColor(ContextCompat.getColor(this, R.color.colorActive));
+    }
+
+
 
 }
