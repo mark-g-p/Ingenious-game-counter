@@ -23,19 +23,23 @@ public class MainActivity extends AppCompatActivity {
     private int activePlayer;
     private TextView currentlyWinning;
     private ArrayList<LinearLayout> rows;
+    private TextView player1Score;
+    private TextView player2Score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        // initialize views
         rows = new ArrayList<>(0);
         rows.add((LinearLayout) findViewById(R.id.player1));
         rows.add((LinearLayout) findViewById(R.id.player2));
-        rows.add((LinearLayout) findViewById(R.id.player3));
-        rows.add((LinearLayout) findViewById(R.id.player4));
+        player1Score = findViewById(R.id.player1_score);
+        player2Score = findViewById(R.id.player2_score);
         currentlyWinning = findViewById(R.id.winner);
+
+        // restore savedInstance if possible
         if (savedInstanceState != null) {
             onRestoreInstanceState(savedInstanceState);
             getWinner(null);
@@ -52,13 +56,10 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < rows.size(); i++) {
             displayPoints(i);
         }
-
-
+        toggleActiveButtons();
+        displayScore();
         revertColors(rows.get(activePlayer).getChildAt(0));
-
         setActivePlayer(rows.get(activePlayer).getChildAt(0));
-
-
     }
 
     // invoked when the activity may be temporarily destroyed, save the instance state here
@@ -74,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
     public void onRestoreInstanceState(Bundle savedInstanceState) {
         // Always call the superclass so it can restore the view hierarchy
         super.onRestoreInstanceState(savedInstanceState);
-
 
         // Restore state members from saved instance
         players = (ArrayList<Player>) savedInstanceState.getSerializable(PLAYERS_LIST);
@@ -124,7 +124,6 @@ public class MainActivity extends AppCompatActivity {
                 points.set(index, ++currentPoints);
                 //Set first element of the points as player's score.
                 points.set(0, Collections.min(points.subList(1, points.size())));
-
             }
         }
 
@@ -167,42 +166,57 @@ public class MainActivity extends AppCompatActivity {
      * This method resets all points setting them to 0.
      */
 
+    public void displayScore() {
+        player1Score.setText(String.valueOf(players.get(0).getScore()));
+        player2Score.setText(String.valueOf(players.get(1).getScore()));
+    }
+
     /* Fuctions used by buttons*/
     public void addPoint1(View view) {
         players.get(activePlayer).addPointTo(1);
         displayPoints(activePlayer);
+        displayScore();
     }
 
     public void addPoint2(View view) {
         players.get(activePlayer).addPointTo(2);
         displayPoints(activePlayer);
+        displayScore();
     }
 
     public void addPoint3(View view) {
         players.get(activePlayer).addPointTo(3);
         displayPoints(activePlayer);
+        displayScore();
     }
 
     public void addPoint4(View view) {
         players.get(activePlayer).addPointTo(4);
         displayPoints(activePlayer);
+        displayScore();
     }
 
     public void addPoint5(View view) {
         players.get(activePlayer).addPointTo(5);
         displayPoints(activePlayer);
+        displayScore();
     }
 
     public void addPoint6(View view) {
         players.get(activePlayer).addPointTo(6);
         displayPoints(activePlayer);
+        displayScore();
     }
 
     //    Give turn to the next player. Back to first player after one round.
     public void nextPlayer(View view) {
+
+        //Disable buttons for non-active player
         revertColors(rows.get(activePlayer).getChildAt(0));
+        //Activate buttons for active player
         activePlayer = (activePlayer + 1) % players.size();
         setActivePlayer(rows.get(activePlayer).getChildAt(0));
+        toggleActiveButtons();
     }
 
     // Resets all points 0.
@@ -218,6 +232,8 @@ public class MainActivity extends AppCompatActivity {
         activePlayer = 0;
         setActivePlayer(rows.get(activePlayer).getChildAt(0));
         displayWinner("None");
+        displayScore();
+        toggleActiveButtons();
     }
 
     public void getWinner(View view) {
@@ -231,9 +247,22 @@ public class MainActivity extends AppCompatActivity {
         currentlyWinning.setText(winner);
     }
 
-    //
     private void revertColors(View view) {
         view.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPointsTable));
+    }
+
+    private void toggleActiveButtons() {
+        int pointsLength = rows.get(activePlayer).getChildCount();
+        for (int j = 0; j < rows.size(); j++) {
+            if (j == activePlayer) {
+                for (int i = 1; i < pointsLength; i++) {
+                    rows.get(j).getChildAt(i).setEnabled(true);
+                }
+            } else { for (int i = 1; i < pointsLength; i++) {
+                rows.get(j).getChildAt(i).setEnabled(false);
+            }
+            }
+        }
     }
 
     private void setActivePlayer(View view) {
@@ -253,7 +282,7 @@ public class MainActivity extends AppCompatActivity {
 //             Keep original color of TextView by giving it transparent background
             revertColors(pointCell);
 
-//             When player reaches 18 points in one color he gets 'genius'.
+//             When player reaches 18 points in one color he gets 'ingenious'.
 //             Change color of TextView when it happens.
             if (point == 18) {
                 switch (i) {
@@ -280,6 +309,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             pointCell.setText(String.valueOf(point));
+
         }
     }
 
