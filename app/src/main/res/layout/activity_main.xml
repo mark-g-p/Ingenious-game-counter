@@ -10,61 +10,41 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TableLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:id="@+id/button_panel"
-                android:layout_marginTop="@dimen/table_margin"
-                android:background="@color/colorActive"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                >
+            <TextView
+                android:id="@+id/player1_score"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/zero"
+                android:textSize="56sp" />
 
-                <TextView
-                    style="@style/NameCellStyle"
-                    android:text="" />
+            <TextView
+                android:id="@+id/player2_score"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/zero"
+                android:textSize="56sp" />
+        </LinearLayout>
 
-                <ImageButton
-                    android:contentDescription="@string/red_star"
-                    style="@style/ShapesCellStyle"
-                    android:onClick="addPoint1"
-                    android:src="@drawable/ic_red_star" />
-
-                <ImageButton
-                    android:contentDescription="@string/green_circle"
-                    style="@style/ShapesCellStyle"
-                    android:onClick="addPoint2"
-                    android:src="@drawable/ic_green_circle" />
-
-                <ImageButton
-                    android:contentDescription="@string/blue_star"
-                    style="@style/ShapesCellStyle"
-                    android:onClick="addPoint3"
-                    android:src="@drawable/ic_blue_star" />
-
-                <ImageButton
-                    android:contentDescription="@string/orange_hexagon"
-                    style="@style/ShapesCellStyle"
-                    android:onClick="addPoint4"
-                    android:src="@drawable/ic_orange_hexagon" />
-
-                <ImageButton
-                    android:contentDescription="@string/yellow_star"
-                    style="@style/ShapesCellStyle"
-                    android:onClick="addPoint5"
-                    android:src="@drawable/ic_yellow_star" />
-
-                <ImageButton
-                    android:contentDescription="@string/purple_ring"
-                    style="@style/ShapesCellStyle"
-                    android:onClick="addPoint6"
-                    android:src="@drawable/ic_purple_circle" />
-            </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false">
 
             <LinearLayout
                 android:id="@+id/player1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
                 android:padding="@dimen/row_padding">
 
                 <TextView
@@ -74,37 +54,119 @@
                 <TextView
                     android:id="@+id/player1_i1"
                     style="@style/PointCellStyle"
+                    android:layout_width="wrap_content"
+                    android:drawableEnd="@drawable/ic_red_star"
+                    android:drawableRight="@drawable/ic_red_star"
+                    android:enabled="true"
+                    android:onClick="addPoint1"
                     android:text="@string/zero" />
 
                 <TextView
                     android:id="@+id/player1_i2"
                     style="@style/PointCellStyle"
+                    android:drawableEnd="@drawable/ic_green_circle"
+                    android:drawableRight="@drawable/ic_green_circle"
+                    android:enabled="true"
+                    android:onClick="addPoint2"
                     android:text="@string/zero" />
 
                 <TextView
                     android:id="@+id/player1_i3"
                     style="@style/PointCellStyle"
+                    android:drawableEnd="@drawable/ic_blue_star"
+                    android:drawableRight="@drawable/ic_blue_star"
+                    android:enabled="true"
+                    android:onClick="addPoint3"
                     android:text="@string/zero" />
 
                 <TextView
                     android:id="@+id/player1_i4"
                     style="@style/PointCellStyle"
+                    android:drawableEnd="@drawable/ic_orange_hexagon"
+                    android:drawableRight="@drawable/ic_orange_hexagon"
+                    android:enabled="true"
+                    android:onClick="addPoint4"
                     android:text="@string/zero" />
 
                 <TextView
                     android:id="@+id/player1_i5"
                     style="@style/PointCellStyle"
+                    android:drawableEnd="@drawable/ic_yellow_star"
+                    android:drawableRight="@drawable/ic_yellow_star"
+                    android:enabled="true"
+                    android:onClick="addPoint5"
                     android:text="@string/zero" />
 
                 <TextView
                     android:id="@+id/player1_i6"
                     style="@style/PointCellStyle"
+                    android:drawableEnd="@drawable/ic_purple_circle"
+                    android:drawableRight="@drawable/ic_purple_circle"
+                    android:enabled="true"
+                    android:onClick="addPoint6"
                     android:text="@string/zero" />
             </LinearLayout>
 
+            <!--<LinearLayout-->
+            <!--android:id="@+id/button_panel"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_margin="@dimen/table_margin"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@color/colorActive"-->
+            <!--android:gravity="center"-->
+            <!--android:orientation="vertical">-->
+
+            <!--<TextView-->
+            <!--style="@style/NameCellStyle"-->
+            <!--android:text="" />-->
+
+            <!--<ImageButton-->
+            <!--style="@style/ShapesCellStyle"-->
+            <!--android:contentDescription="@string/red_star"-->
+            <!--android:onClick="addPoint1"-->
+            <!--android:src="@drawable/ic_red_star" />-->
+
+            <!--<ImageButton-->
+            <!--style="@style/ShapesCellStyle"-->
+            <!--android:contentDescription="@string/green_circle"-->
+            <!--android:onClick="addPoint2"-->
+            <!--android:src="@drawable/ic_green_circle" />-->
+
+            <!--<ImageButton-->
+            <!--style="@style/ShapesCellStyle"-->
+            <!--android:contentDescription="@string/blue_star"-->
+            <!--android:onClick="addPoint3"-->
+            <!--android:src="@drawable/ic_blue_star" />-->
+
+            <!--<ImageButton-->
+            <!--style="@style/ShapesCellStyle"-->
+            <!--android:contentDescription="@string/orange_hexagon"-->
+            <!--android:onClick="addPoint4"-->
+            <!--android:src="@drawable/ic_orange_hexagon" />-->
+
+            <!--<ImageButton-->
+            <!--style="@style/ShapesCellStyle"-->
+            <!--android:contentDescription="@string/yellow_star"-->
+            <!--android:onClick="addPoint5"-->
+            <!--android:src="@drawable/ic_yellow_star" />-->
+
+            <!--<ImageButton-->
+            <!--style="@style/ShapesCellStyle"-->
+            <!--android:contentDescription="@string/purple_ring"-->
+            <!--android:onClick="addPoint6"-->
+            <!--android:src="@drawable/ic_purple_circle" />-->
+            <!--</LinearLayout>-->
+
+
             <LinearLayout
                 android:id="@+id/player2"
-                android:padding="16dp">
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="@dimen/row_padding">
 
                 <TextView
                     style="@style/NameCellStyle"
@@ -113,113 +175,61 @@
                 <TextView
                     android:id="@+id/player2_i1"
                     style="@style/PointCellStyle"
+                    android:layout_width="wrap_content"
+                    android:drawableEnd="@drawable/ic_red_star"
+                    android:drawableRight="@drawable/ic_red_star"
+                    android:enabled="false"
+                    android:onClick="addPoint1"
                     android:text="@string/zero" />
 
                 <TextView
                     android:id="@+id/player2_i2"
                     style="@style/PointCellStyle"
+                    android:drawableEnd="@drawable/ic_green_circle"
+                    android:drawableRight="@drawable/ic_green_circle"
+                    android:enabled="false"
+                    android:onClick="addPoint2"
                     android:text="@string/zero" />
 
                 <TextView
                     android:id="@+id/player2_i3"
                     style="@style/PointCellStyle"
+                    android:drawableEnd="@drawable/ic_blue_star"
+                    android:drawableRight="@drawable/ic_blue_star"
+                    android:enabled="false"
+                    android:onClick="addPoint3"
                     android:text="@string/zero" />
 
                 <TextView
                     android:id="@+id/player2_i4"
                     style="@style/PointCellStyle"
+                    android:drawableEnd="@drawable/ic_orange_hexagon"
+                    android:drawableRight="@drawable/ic_orange_hexagon"
+                    android:enabled="false"
+                    android:onClick="addPoint4"
                     android:text="@string/zero" />
 
                 <TextView
                     android:id="@+id/player2_i5"
                     style="@style/PointCellStyle"
+                    android:drawableEnd="@drawable/ic_yellow_star"
+                    android:drawableRight="@drawable/ic_yellow_star"
+                    android:enabled="false"
+                    android:onClick="addPoint5"
                     android:text="@string/zero" />
 
                 <TextView
                     android:id="@+id/player2_i6"
                     style="@style/PointCellStyle"
+                    android:drawableEnd="@drawable/ic_purple_circle"
+                    android:drawableRight="@drawable/ic_purple_circle"
+                    android:enabled="false"
+                    android:onClick="addPoint6"
                     android:text="@string/zero" />
+
             </LinearLayout>
+        </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/player3"
-                android:padding="16dp">
-
-                <TextView
-                    style="@style/NameCellStyle"
-                    android:text="@string/player3" />
-
-                <TextView
-                    android:id="@+id/player3_i1"
-                    style="@style/PointCellStyle"
-                    android:text="@string/zero" />
-
-                <TextView
-                    android:id="@+id/player3_i2"
-                    style="@style/PointCellStyle"
-                    android:text="@string/zero" />
-
-                <TextView
-                    android:id="@+id/player3_i3"
-                    style="@style/PointCellStyle"
-                    android:text="@string/zero" />
-
-                <TextView
-                    android:id="@+id/player3_i4"
-                    style="@style/PointCellStyle"
-                    android:text="@string/zero" />
-
-                <TextView
-                    android:id="@+id/player3_i5"
-                    style="@style/PointCellStyle"
-                    android:text="@string/zero" />
-
-                <TextView
-                    android:id="@+id/player3_i6"
-                    style="@style/PointCellStyle"
-                    android:text="@string/zero" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/player4"
-                android:padding="16dp">
-
-                <TextView
-                    style="@style/NameCellStyle"
-                    android:text="@string/player4" />
-
-                <TextView
-                    android:id="@+id/player4_i1"
-                    style="@style/PointCellStyle"
-                    android:text="@string/zero" />
-
-                <TextView
-                    android:id="@+id/player4_i2"
-                    style="@style/PointCellStyle"
-                    android:text="@string/zero" />
-
-                <TextView
-                    android:id="@+id/player4_i3"
-                    style="@style/PointCellStyle"
-                    android:text="@string/zero" />
-
-                <TextView
-                    android:id="@+id/player4_i4"
-                    style="@style/PointCellStyle"
-                    android:text="@string/zero" />
-
-                <TextView
-                    android:id="@+id/player4_i5"
-                    style="@style/PointCellStyle"
-                    android:text="@string/zero" />
-
-                <TextView
-                    android:id="@+id/player4_i6"
-                    style="@style/PointCellStyle"
-                    android:text="@string/zero" />
-            </LinearLayout>
-
-        </TableLayout>
 
         <TextView
             style="@style/NormalTextStyle"
