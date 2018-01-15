@@ -21,8 +21,8 @@
 
             <TextView
                 android:id="@+id/player2_score"
-                style="@style/mainScoreStyle"
-                android:text="@string/zero" />
+                android:text="@string/zero"
+                style="@style/mainScoreStyle" />
         </LinearLayout>
 
         <LinearLayout
@@ -34,9 +34,9 @@
                 android:id="@+id/player1"
                 style="@style/playerPointsStyle">
 
-                <TextView
+                <EditText
                     style="@style/NameCellStyle"
-                    android:text="@string/player1" />
+                    android:hint="@string/player1" />
 
                 <TextView
                     android:id="@+id/player1_i1"
@@ -92,9 +92,9 @@
                 android:id="@+id/player2"
                 style="@style/playerPointsStyle">
 
-                <TextView
+                <EditText
                     style="@style/NameCellStyle"
-                    android:text="@string/player2" />
+                    android:hint="@string/player2" />
 
                 <TextView
                     android:id="@+id/player2_i1"

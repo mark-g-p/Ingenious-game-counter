@@ -7,6 +7,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState != null) {
             onRestoreInstanceState(savedInstanceState);
             getWinner(null);
+            displayPlayers();
         } else {
             players = new ArrayList<>(0);
 //          Add players to the game
@@ -56,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < rows.size(); i++) {
             displayPoints(i);
         }
+
         toggleActiveButtons();
         displayScore();
         revertColors(rows.get(activePlayer).getChildAt(0));
@@ -82,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //  Player class definition.
-    protected static class Player implements Comparable<Player>, Parcelable {
+    protected static class Player implements Comparable<Player>, Parcelable     {
 
         private String name;
         private ArrayList<Integer> points;
@@ -231,12 +234,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Displaying functions.
+    private void displayPlayers() {
+        for (int i = 0; i < rows.size(); i++) {
+            LinearLayout playersPointsView = rows.get(i);
+            EditText nameCell = (EditText) playersPointsView.getChildAt(0);
+            nameCell.setText(players.get(i).getName());
+        }
+    }
+
     private void displayWinner(String winner) {
 
         currentlyWinning.setText(winner);
     }
 
-    public void displayScore() {
+    private void displayScore() {
         player1Score.setText(String.valueOf(players.get(0).getScore()));
         player2Score.setText(String.valueOf(players.get(1).getScore()));
     }
@@ -307,7 +318,6 @@ public class MainActivity extends AppCompatActivity {
     private void setActivePlayer(View view) {
         view.setBackgroundColor(ContextCompat.getColor(this, R.color.colorActive));
     }
-
 
 
 }
