@@ -1,5 +1,6 @@
 package com.example.android.ingenious_counter;
 
+import android.databinding.DataBindingUtil;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
@@ -10,6 +11,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.android.ingenious_counter.databinding.ActivityMainBinding;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -24,21 +27,18 @@ public class MainActivity extends AppCompatActivity {
     private int activePlayer;
     private TextView currentlyWinning;
     private ArrayList<LinearLayout> rows;
-    private TextView player1Score;
-    private TextView player2Score;
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
         // initialize views
         rows = new ArrayList<>(0);
-        rows.add((LinearLayout) findViewById(R.id.player1));
-        rows.add((LinearLayout) findViewById(R.id.player2));
-        player1Score = findViewById(R.id.player1_score);
-        player2Score = findViewById(R.id.player2_score);
-        currentlyWinning = findViewById(R.id.winner);
+        rows.add(binding.player1);
+        rows.add(binding.player2);
 
         // restore savedInstance if possible
         if (savedInstanceState != null) {
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //  Player class definition.
-    protected static class Player implements Comparable<Player>, Parcelable     {
+    protected static class Player implements Comparable<Player>, Parcelable {
 
         private String name;
         private ArrayList<Integer> points;
@@ -244,12 +244,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void displayWinner(String winner) {
 
-        currentlyWinning.setText(winner);
+        binding.winner.setText(winner);
     }
 
     private void displayScore() {
-        player1Score.setText(String.valueOf(players.get(0).getScore()));
-        player2Score.setText(String.valueOf(players.get(1).getScore()));
+        binding.player1Score.setText(String.valueOf(players.get(0).getScore()));
+        binding.player2Score.setText(String.valueOf(players.get(1).getScore()));
     }
 
     private void displayPoints(int active_player) {
