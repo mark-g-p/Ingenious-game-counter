@@ -8,7 +8,6 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -25,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
     private static final String ACTIVE_PLAYER = "activePlayer";
     private ArrayList<Player> players;
     private int activePlayer;
-    private TextView currentlyWinning;
     private ArrayList<LinearLayout> rows;
     private ActivityMainBinding binding;
 
@@ -237,7 +235,7 @@ public class MainActivity extends AppCompatActivity {
     private void displayPlayers() {
         for (int i = 0; i < rows.size(); i++) {
             LinearLayout playersPointsView = rows.get(i);
-            EditText nameCell = (EditText) playersPointsView.getChildAt(0);
+            TextView nameCell = (TextView) playersPointsView.getChildAt(0);
             nameCell.setText(players.get(i).getName());
         }
     }

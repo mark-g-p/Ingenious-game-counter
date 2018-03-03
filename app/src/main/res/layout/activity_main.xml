@@ -38,7 +38,7 @@
                 <TextView
                     android:id="@+id/player1_name"
                     style="@style/NameCellStyle"
-                    android:hint="@string/player1" />
+                    android:text="@string/player1" />
 
                 <TextView
                     android:id="@+id/player1_i1"
@@ -97,7 +97,7 @@
                 <TextView
                     android:id="@+id/player2_name"
                     style="@style/NameCellStyle"
-                    android:hint="@string/player2" />
+                    android:text="@string/player2" />
 
                 <TextView
                     android:id="@+id/player2_i1"
